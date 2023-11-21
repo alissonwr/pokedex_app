@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(to bottom, #6ab7f5, #fff);
+    min-height: 100vh; /*Altura mínima do body seja 100% da tela*/
+}
+
+main {
+    display: inline-block; /*Deixa o espaço apenas da imagem*/
+    margin-top: 2%;
+    padding: 15px;
+    position: relative; /*Os elementos que possuem position absolute vão respeitar as delimitações ou seja os espaços da tag main*/
+}
+
+.pokedex {
+    width: 100%;
+    max-width: 425px;
+}
+
+.pokemon_image {
+    position: absolute; /*Deixando a imagem em cima da pokedex */
+    bottom: 55%; /*Posicionando a imagem do pokemon no centro da pokedex, usa-se em % pois em pixel ele não ficará responsivo. Lmebrando que esse 55% é da altura da tag main*/
+    left: 50%;
+    transform: translate(-63%, 20%); /*Ajustando a imagem um pouco mais para esquerda e para baixo, pois não ficou muito ajustado no left e bottom*/
+    height: 18%; /*Para que o tamanho do pokemon acompanhe a tela e seja responsivo.*/
+}
+
+.pokemon_data {
+    position: absolute;
+    font-weight: 600;
+    color: #aaa;
+    top: 54.5%;
+    right: 27%;
+    font-size: clamp(8px, 5vw, 25px); /*Essa propriedade coloca valores min, desejáveis e máximos para a fonte para que haja responsividade.*/
+}
+
+.pokemon_name {
+    color: #3a444d;
+    text-transform: capitalize;/*Primeira letra maiúscula*/
+}
+
+.form {
+    position: absolute;
+    width: 65%; /*Para que o espaço que ocupa o formulário seja igual a tela do pokemon*/
+    top: 65%;
+    left: 13.5%;
+}
+
+.input_search {
+    width: 100%; /*Faz com que o input ocupe 100% da área do form*/
+    padding: 4%;
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #3a444d;
+    font-size: clamp(8px, 5vw, 1rem); /*Essa propriedade coloca valores min, desejáveis e máximos para a fonte para que haja responsividade.*/
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333; /* Primeiro valor é do eixo x, segundo valor eixo y, tericeiro é o tamanho da sombra e o quarto é a cor da sombra. Repetindo os valores cria outra sombra embaixo da primeira*/
+}
+
+.buttons {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 65%;
+    transform: translate(-57%, 0);
+    width: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(5px, 5vw, 1rem);
+    font-weight: 600;
+    color: white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222, -4px 6px #000;
+}
+
+.button:active {
+    box-shadow: inset -4px 4px 0 #222; /*Usando o inset para criar uma sombra interna simulando que o botão está sendo clicado*/
+    font-size: 0.9rem;
+}
